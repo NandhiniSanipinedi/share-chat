@@ -1,0 +1,305 @@
+# index.html
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>
+
+# app.js
+
+import './App.css';
+import { BrowserRouter,Routes,Route,Link } from 'react-router-dom';
+import Sidebar from './components/Sidebar';
+import Content from './components/Content';
+import Home from './pages/Home';
+import Profile from './pages/Profile';
+import Videos from './pages/Videos';
+import Wallet from './pages/Wallet';
+import Explore from './pages/Explore';
+function App() {
+  return (
+<>
+    <div className='container-fluid con'>
+      <div className='row'>
+{/* <Home></Home>
+    <Profile></Profile>
+    <Videos></Videos>
+    <Wallet></Wallet>
+    <Explore></Explore> */}
+    
+    <BrowserRouter>
+    <Sidebar></Sidebar>
+    {/* <Content></Content> */}
+ <Routes>
+ <Route path='/Home' element={<Home/>}></Route>
+ <Route path='/Profile' element={<Profile/>}></Route>
+ <Route path='/Videos' element={<Videos/>}></Route>
+ <Route path='/Wallet' element={<Wallet/>}></Route>
+ <Route path='/Explore' element={<Explore/>}></Route>
+ </Routes>
+ </BrowserRouter>
+ </div>
+ </div>
+ </>
+  );
+}export default App;
+
+# componrnts
+    #content.js
+
+import React from 'react'
+
+export default function Content() {
+  return (
+    <>
+            <div class="col-md-10" style={{height:'750px',background:'grey',color:'white'}}>
+            <iframe width="360" height="500" src="https://sharechat.com/embed/MXq7XgMw" frameborder="0"></iframe>
+    <iframe width="360" height="500" src="https://sharechat.com/embed/Mgj4Qzz" frameborder="0"></iframe>
+    <iframe width="360" height="500" src="https://sharechat.com/embed/Mgk0DOw" frameborder="0"></iframe>
+    </div>
+   
+
+ 
+   </>
+  )
+}
+# sidebar.js
+
+import React from 'react'
+import { Link } from 'react-router-dom';
+export default function Sidebar() { 
+  return (
+    <>
+      
+            <div class="col-md-2" style={{height:'750px', background:'black',color:'white',position:'fixed'}}>
+            <i class="fa fa-bars" aria-hidden="true"></i>
+
+<img src="https://financialsamachar.com/wp-content/uploads/2020/07/sharechat.jpg" style={{height:'100px',width:'200px'}}></img>
+       <div className='menu'>
+<ul>
+
+<Link to="/Home"><li><i class="fa fa-home" aria-hidden="true" ></i>Home</li></Link>
+<Link to="/Profile"><li><i class="fa fa-user" aria-hidden="true"></i>Profile</li></Link> 
+<Link to="/Videos"><li><i class="fa fa-video-camera" aria-hidden="true"></i>Videos</li></Link>  
+<Link to="/Wallet"><li><i class="fa fa-video-camera" aria-hidden="true"></i>Wallet</li></Link>
+<Link to="/Explore"><li><i class="fa fa-clock-o" aria-hidden="true"></i>Explore</li></Link>
+</ul>
+
+
+
+</div>
+        
+    </div>
+    
+   
+    
+    </>
+  )
+}
+
+
+# pages
+    #explore
+
+import React from 'react'
+
+export default function Explore() {
+  return (
+    <div className='col-md-10'>
+      <form class="d-flex" style={{marginLeft:'30%',paddingTop:'2%'}}>
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
+      </form>
+        
+     <h5 style={{marginLeft:"30%",paddingTop:"2%"}}>Categories</h5>
+
+        <div className='fan' style={{marginLeft:'60%',height:'600px',width:'1000px',paddingTop:'2%'}}>
+        <div class='row'>
+
+          <div class='col-md-3'>
+         <div class="card">
+  <img src='https://cdn.sharechat.com/326a3bb_1636059522643_sc.jpeg' alt="..."/>
+</div>
+         </div>
+        
+         <h5>Bakthi Special</h5>
+
+
+         <div class='col-md-3'>
+         <div class="card">
+  <img src='https://cdn4.sharechat.com/20a847eb_1697611841250_sc.webp' alt="..."/>
+</div>
+         </div>
+         <h5>astrology</h5>
+
+         <div class='col-md-3'>
+         <div class="card">
+  <img src='https://cdn.sharechat.com/37f8eb45_1673249299815_sc.png' alt="..."/>
+</div>
+         </div>
+         <h5>Cultural Tradition</h5>
+
+</div>
+<div style={{marginLeft:'10%'}}><button type="button" class="btn btn-primary">See more</button>
+</div>
+         </div>
+
+         
+   </div>
+
+       
+#home
+
+import React from 'react'
+
+
+export default function Home(){
+  return (
+   
+    <div class="col-md-10">
+        <div className="Tv" style={{height:'750px',background:'white',marginLeft:'650px'}}>
+        <h1>Trending feed</h1>
+           
+                
+          <iframe width="100%" height="900px" src="https://sharechat.com/embed/MVkzmNa" frameborder="0"></iframe>
+          <iframe width="100%" height="900px" src="https://sharechat.com/embed/dJDWyAN" frameborder="0"></iframe>
+          <iframe width="100%" height="900px" src="https://sharechat.com/embed/MXMZdZd6" frameborder="0"></iframe>
+          <iframe width="100%" height="900px" src="https://sharechat.com/embed/MZpPGBa" frameborder="0"></iframe>
+          <iframe width="100%" height="900px" src="https://sharechat.com/embed/MV9xkOn" frameborder="0"></iframe>
+          <iframe width="100%" height="900px" src="https://sharechat.com/embed/MzAOJgn" frameborder="0"></iframe>
+          <iframe width="100%" height="900px" src="https://sharechat.com/embed/MXqpJavz" frameborder="0"></iframe>
+          </div>
+        </div>
+       
+        
+       
+  )
+}
+
+# profile
+
+import React from 'react'
+
+export default function Profile() {
+  return (
+    <div className="col-md-10">
+        <img src='https://sharechat.com/assets/zeroState/profile-zero-north.svg' style={{height:'50%',width:'50%',marginLeft:'40%'}}></img>
+        <h3 style={{marginLeft:'50%'}}>Welcome to 2 crore sharechat family</h3>
+        <div className="venkata" style={{marginLeft:'60%'}}><button type="button" class="btn btn-primary">Continue account</button></div>
+    </div>
+  )
+}
+
+
+# vedios
+
+import React from 'react'
+
+export default function Videos() {
+  return (
+    <div class="col-md-10">
+      <form class="d-flex" style={{marginLeft:'30%',paddingTop:'2%'}}>
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
+      </form>
+        <div className="Tv" style={{height:'750px',background:'white',marginLeft:'400px',paddingTop:'2%'}}>
+           
+                
+        <iframe width="50%" height="100%S" src="https://sharechat.com/embed/MPrvbbx" frameborder="0"></iframe>
+        <iframe width="50%" height="100%" src="https://sharechat.com/embed/MnlNbWk" frameborder="0"></iframe>
+        <iframe width="50%" height="100%" src="https://sharechat.com/embed/MXe47OQ6" frameborder="0"></iframe>
+        <iframe width="50%" height="100%" src="https://sharechat.com/embed/MXxqejlx" frameborder="0"></iframe>
+        <iframe width="50%" height="100%" src="https://sharechat.com/embed/MXvaQdp5" frameborder="0"></iframe>
+        <iframe width="50%" height="100%" src="https://sharechat.com/embed/M9Nn9d6" frameborder="0"></iframe>
+        <iframe width="50%" height="100%" src="https://sharechat.com/embed/M44eAQ5" frameborder="0"></iframe>
+        <iframe width="50%" height="100%" src="https://sharechat.com/embed/Mj7zNq9" frameborder="0"></iframe>
+        <iframe width="50%" height="100%" src="https://sharechat.com/embed/MlpQPQ5" frameborder="0"></iframe>
+        <iframe width="50%" height="100%" src="https://sharechat.com/embed/MlpQPQ5" frameborder="0"></iframe>
+          </div>
+        </div>
+  )
+}
+
+# wallet
+
+import React from 'react'
+
+export default function Wallet() {
+  return (
+    <div class="col-md-10">
+       <h5 style={{marginLeft:'60%',paddingTop:'15%'}}>SignIn</h5>
+       <h5 style={{marginLeft:'50%'}}>To create account enter your mobile number</h5>
+       <form>
+       <div class="form-group" style={{height:'40%',width:'40%',marginLeft:'50%'}}>
+                    <input type="mobile no" id="mobile no" class="form-control" placeholder="+91" required></input>    
+                </div>
+                </form>
+  <h6 style={{marginLeft:'50%',paddingTop:"2%"}}>By accepting this you agree to ourTerms and conditions,<br></br>Privacy Policy&Content Policy</h6>
+  <div className="venkata" style={{marginLeft:'60%'}}><button type="button" class="btn btn-primary">Enter otp</button></div>
+      
+
+        </div>
+  )
+}
+# style.css
+
+.menu{
+    position:fixed
+}
+
+# app.css
+
+.con{
+  height: 800px;
+  width: 1500px;
+  background-color:white;
+} 
+.menu ul li {
+  Margin-right:20px;
+}
+.menu ul li i {
+  margin-right: 10px
+}
+     
+       
+  )
+}
